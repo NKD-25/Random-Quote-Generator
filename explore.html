@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="icon" type="image" href="logo.png">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light Mode Styles */
+        .light-mode {
+            background-image: url(https://images.ctfassets.net/i3tkg7dt3kro/6ps9pYLle0N5aCW9BMuqIw/4485ee1641e7319d2e76e05394289596/hero-yellow-flowers.jpg);
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(12px);
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
+            color: #133042;
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #181818;
+            background-image: url(https://images.unsplash.com/photo-1641895958846-19dab3471449?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3RhcnJ5JTIwbmlnaHQlMjBza3l8ZW58MHx8MHx8fDA%3D);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        /* Header Styling */
+        #header {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #navbar1 {
+            width: 100%;
+            background-color: #fcc62e;
+            color: #133042;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        /* Navbar content  */
+        .a1 {
+            text-decoration: none;
+            color: #133042;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .a1:hover {
+            background-color: #133042;
+            color: #fcc62e;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        #navbar1 i {
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        /* Quote Container Styling */
+        #quote-container {
+            margin-bottom: 60px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+        }
+
+        /* Dark Mode Quote Container */
+        body.dark-mode #quote-container {
+            background-color: #333;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Quote Text */
+        #quote {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        /* Dark Mode Quote Text */
+        body.dark-mode #quote {
+            color: #fcc62e;
+        }
+
+        /* Author Styling */
+        #author {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Dark Mode Author */
+        body.dark-mode #author {
+            color: #aaa;
+        }
+
+        /* Button Styling */
+        #generate-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #fcc62e;
+            color: #133042;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #generate-btn:hover {
+            background-color: #133042;
+            color: #fcc62e;
+            transform: translateY(-3px);
+        }
+
+        /* Dark Mode Button */
+        body.dark-mode #generate-btn {
+            background-color: #444;
+            color: #fcc62e;
+        }
+
+        body.dark-mode #generate-btn:hover {
+            background-color: #fcc62e;
+            color: #444;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #header {
+                font-size: 28px;
+            }
+
+            #quote {
+                font-size: 18px;
+            }
+
+            #author {
+                font-size: 16px;
+            }
+
+            #generate-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Mode Toggle Button */
+        #mode-toggle {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            font-size: 35px;
+            color: #fcc62e;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #mode-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+
+    <!-- Header -->
+    <div id="header">Let the Quotes Choose You</div>
+
+    <div id="navbar1">
+        <div><a href="first.html" class="a1" id="home"><i class="fa-solid fa-house"></i> Home</a></div>
+        <div><a href="about-us.html" class="a1">About us</a></div>
+    </div>
+
+    <!-- Quote Container -->
+    <div id="quote-container">
+        <div id="quote">Click the button to generate a random quote.</div>
+        <div id="author"></div>
+        <button id="generate-btn"><i class="fa-solid fa-sync-alt"></i> Generate Quote</button>
+    </div>
+
+    <!-- Mode Toggle Button -->
+    <button id="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+
+    <script>
+        // Array of quotes
+        const quotes = [
+            { text: "If you are working on something that you really care about, you don't have to be pushed. The vision pulls you.", author: "Steve Jobs" },
+            { text: "Concentrate all your thoughts upon the work in hand. The sun's rays do not burn until brought to a focus.", author: "Alexander Graham Bell" },
+            { text: "You have within you right now, everything you need to deal with whatever the world can throw at you.", author: "Brian Tracy" },
+            { text: "The successful man will profit from his mistakes and try again in a different way.", author: "" },
+            { text: "You've got to get up every morning with determination if you're going to go to bed with satisfaction.", author: "George Lorimer" },
+            { text: "You'll find that education is just about the only thing lying around loose in this world, and it's about the only thing a fellow can have as much of as he's willing to haul away.", author: "John Graham" },
+            { text: "Take the attitude of a student, never be too big to ask questions, never know too much to learn something new.", author: "Augustine Og Mandino" },
+            { text: "When you change your thoughts, remember to also change your world.", author: "Norman Vincent Peale" },
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "In three words I can sum up everything I've learned about life: it goes on.", author: "Robert Frost" },
+            { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
+            { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+            { text: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.", author: "Ralph Waldo Emerson" },
+            { text: "The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well.", author: "Ralph Waldo Emerson" },
+            { text: "You only live once, but if you do it right, once is enough.", author: "Mae West" },
+            { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
+            { text: "Do not go where the path may lead, go instead where there is no path and leave a trail.", author: "Ralph Waldo Emerson" },
+            { text: "What lies behind us and what lies before us are tiny matters compared to what lies within us.", author: "Ralph Waldo Emerson" },
+            { text: "It is never too late to be what you might have been.", author: "George Eliot" },
+            { text: "You must be the change you wish to see in the world.", author: "Mahatma Gandhi" },
+            { text: "The best way to predict the future is to create it.", author: "Abraham Lincoln" },
+            { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+            { text: "When you change your thoughts, remember to also change your world.", author: "Norman Vincent Peale" },
+            { text: "Don’t count the days, make the days count.", author: "Muhammad Ali" },
+            { text: "I have not failed. I've just found 10,000 ways that won't work.", author: "Thomas Edison" },
+            { text: "Life is 10% what happens to us and 90% how we react to it.", author: "Charles R. Swindoll" },
+            { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+            { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+            { text: "The only impossible journey is the one you never begin.", author: "Tony Robbins" },
+            { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+            { text: "Whether you think you can or you think you can’t, you’re right.", author: "Henry Ford" },
+            { text: "A journey of a thousand miles begins with a single step.", author: "Lao Tzu" },
+            { text: "In the end, we will remember not the words of our enemies, but the silence of our friends.", author: "Martin Luther King Jr." },
+            { text: "You must do the thing you think you cannot do.", author: "Eleanor Roosevelt" },
+            { text: "Success is not final; failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
+            { text: "The only way to have a friend is to be one.", author: "Ralph Waldo Emerson" },
+            { text: "The most difficult thing is the decision to act, the rest is merely tenacity.", author: "Amelia Earhart" },
+            { text: "If you want to go fast, go alone. If you want to go far, go together.", author: "African Proverb" },
+            { text: "The greatest glory in living lies not in never falling, but in rising every time we fall.", author: "Nelson Mandela" },
+            { text: "Happiness is not something ready made. It comes from your own actions.", author: "Dalai Lama" },
+            { text: "Act as if what you do makes a difference. It does.", author: "William James" },
+            { text: "You can never plan the future by the past.", author: "Edmund Burke" },
+            { text: "Don’t judge each day by the harvest you reap but by the seeds that you plant.", author: "Robert Louis Stevenson" },
+            { text: "The only way to achieve the impossible is to believe it is possible.", author: "Charles Kingsleigh" },
+            { text: "To live a creative life, we must lose our fear of being wrong.", author: "Joseph Chilton Pearce" },
+            { text: "If you want to lift yourself up, lift up someone else.", author: "Booker T. Washington" },
+            { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+            { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+            { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+            { text: "Be the change that you wish to see in the world.", author: "Mahatma Gandhi" },
+            { text: "In order to write about life first you must live it.", author: "Ernest Hemingway" },
+            { text: "One secret of success in life is for a man to be ready for his opportunity when it comes.", author: "Benjsmin Disraeli" },
+            { text: "There are no shortcuts to any place worth going.", author: "Beverly Sills" },
+            { text: "Everything you can imagine is real.", author: "Pablo Picasso" },
+            { text: "Doubt kills more dreams than failure ever will.", author: "Suzy Kassem" },
+            { text: "You don’t have to be great to start, but you have to start to be great.", author: "Zig Ziglar" },
+            { text: "What you get by achieving your goals is not as important as what you become by achieving your goals.", author: "Zig Ziglar" },
+            { text: "Nothing is impossible, the word itself says 'I'm possible!'", author: "Audrey Hepburn" },
+            { text: "Life isn’t about waiting for the storm to pass, it’s about learning how to dance in the rain.", author: "Vivian Greene" },
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "The best time to plant a tree was 20 years ago. The second best time is now.", author: "Chinese Proverb" },
+            { text: "You miss 100% of the shots you don't take.", author: "Wayne Gretzky" },
+            { text: "Success is not the key to happiness. Happiness is the key to success.", author: "Albert Schweitzer" },
+            { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
+            { text: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
+            { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt" },
+            { text: "Do what you can, with what you have, where you are.", author: "Theodore Roosevelt" },
+            { text: "Everything you’ve ever wanted is on the other side of fear.", author: "George Addair" },
+            { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+            { text: "You are never too old to set another goal or to dream a new dream.", author: "C.S. Lewis" },
+            { text: "You must be the change you wish to see in the world.", author: "Mahatma Gandhi" },
+            { text: "The only limit to our realization of tomorrow is our doubts of today.", author: "Franklin D. Roosevelt" },
+            { text: "It always seems impossible until it's done.", author: "Nelson Mandela" },
+            { text: "Don’t count the days, make the days count.", author: "Muhammad Ali" },
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "The secret of getting ahead is getting started.", author: "Mark Twain" },
+            { text: "What lies behind us and what lies before us are tiny matters compared to what lies within us.", author: "Ralph Waldo Emerson" },
+            { text: "Success usually comes to those who are too busy to be looking for it.", author: "Henry David Thoreau" },
+            { text: "In three words I can sum up everything I’ve learned about life: it goes on.", author: "Robert Frost" },
+            { text: "Everything you can imagine is real.", author: "Pablo Picasso" }
+        ];
+
+        // Function to get a random quote
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        // Function to display the quote
+        function displayQuote() {
+            const quoteElement = document.getElementById('quote');
+            const authorElement = document.getElementById('author');
+            const quote = getRandomQuote();
+            quoteElement.textContent = `"${quote.text}"`;
+            authorElement.textContent = `- ${quote.author}`;
+        }
+
+        // Add event listener to generate quote button
+        document.getElementById('generate-btn').addEventListener('click', displayQuote);
+
+        // Optional: Display a quote on initial page load
+        displayQuote();
+
+        // Add event listener to mode toggle button
+        document.getElementById('mode-toggle').addEventListener('click', function () {
+            const body = document.body;
+            const icon = this.querySelector('i');
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

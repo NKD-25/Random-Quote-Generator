@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relationship Quotes</title>
+    <link rel="icon" type="image" href="logo.png">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #navbar1 {
+            width: 100%;
+            background-color: #fcc62e;
+            color: #133042;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        /* Navbar content  */
+        .a1 {
+            text-decoration: none;
+            color: #133042;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .a1:hover {
+            background-color: #133042;
+            color: #fcc62e;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        #navbar1 i {
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        /* Light Mode Styles */
+        body.light-mode {
+            background-image: url(https://www.shutterstock.com/image-photo/holding-hands-couple-silhouette-on-600nw-2313863657.jpg);
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(10px);
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
+            color: #133042;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-image: url(https://img.freepik.com/premium-photo/silhouette-lovers-walk-hand-hand-love-together-clouds-dark-rainy-season_272843-146.jpg);
+            background-size: cover;
+            background-position: center;
+            backdrop-filter: blur(10px);
+            background-attachment: fixed;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #181818;
+            color: #fff;
+        }
+
+        /* Header Styling */
+        #header {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Quote Container Styling */
+        #quote-container {
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+        }
+
+        /* Dark Mode Quote Container */
+        body.dark-mode #quote-container {
+            background-color: #333;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Quote Text */
+        #quote {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        /* Dark Mode Quote Text */
+        body.dark-mode #quote {
+            color: #fcc62e;
+        }
+
+        /* Author Styling */
+        #author {
+            font-size: 18px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        /* Dark Mode Author */
+        body.dark-mode #author {
+            color: #aaa;
+        }
+
+        /* Button Styling */
+        #generate-btn {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #fcc62e;
+            color: #133042;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #generate-btn:hover {
+            background-color: #133042;
+            color: #fcc62e;
+            transform: translateY(-3px);
+        }
+
+        /* Dark Mode Button */
+        body.dark-mode #generate-btn {
+            background-color: #444;
+            color: #fcc62e;
+        }
+
+        body.dark-mode #generate-btn:hover {
+            background-color: #fcc62e;
+            color: #444;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            #header {
+                font-size: 28px;
+            }
+
+            #quote {
+                font-size: 18px;
+            }
+
+            #author {
+                font-size: 16px;
+            }
+
+            #generate-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Mode Toggle Button */
+        #mode-toggle {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            font-size: 35px;
+            color: #fcc62e;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #mode-toggle:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+
+    <!-- Header -->
+    <div id="header">Relationship Quote</div>
+
+    <div id="navbar1">
+        <div><a href="first.html" class="a1" id="home"><i class="fa-solid fa-house"></i> Home</a></div>
+        <div><a href="about-us.html" class="a1">About us</a></div>
+    </div>
+
+    <!-- Quote Container -->
+    <div id="quote-container">
+        <div id="quote">Click the button to generate a random quote.</div>
+        <div id="author"></div>
+        <button id="generate-btn"><i class="fa-solid fa-sync-alt"></i> Generate Quote</button>
+    </div>
+
+    <!-- Mode Toggle Button -->
+    <button id="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+
+    <script>
+        // Array of quotes
+        const quotes = [
+           {text: "Love is when the other person's happiness is more important than your own", author: "H. Jackson Brown, Jr."},
+           {text: "Thinking of you keeps me awake. Dreaming of you keeps me asleep. Being with you keeps me alive.", author: "Unknown"},
+           {text: "A successful relationship requires falling in love many times, but always with the same person.", author: "Mignon McLaughlin"},
+           {text: "The best thing to hold onto in life is each other.", author: "Audrey Hepburn"},
+           {text: "The most important thing in a relationship is not what you get, but what you give.", author: "Eleanor Roosevelt"},
+           {text: "Love is composed of a single soul inhabiting two bodies.", author: "Aristotle"},
+           {text: "Love is not about possession. Love is about appreciation", author: "Osho"},
+           {text: "In the arithmetic of love, one plus one equals everything, and two minus one equals nothing.", author: "Mignon McLaughlin"},
+           {text: "Love doesn't make the world go round, but it makes the ride worthwhile.", author: "Franklin P. Jones"},
+           {text: "In the end, love is not about finding someone you can live with, but finding someone you can't live without.", author: "Rafael Ortiz"},
+           {text: "A great relationship is not about finding the perfect person, it's about seeing an imperfect person perfectly", author: "Sam Keen"},
+           {text: "The best relationships are the ones where you can be yourself without the fear of judgment.", author: "Unknown"},
+           {text: "The greatest thing you'll ever learn is just to love and be loved in return.", author: "Eden Ahbez"},
+           {text: "Love is like the wind, you can't see it but you can feel it", author: "Nicholas Sparks"},
+           {text: "True love doesn't come with conditions, it comes with understanding.", author: "Unknown"}
+    ];
+
+        // Function to get a random quote
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        // Function to display the quote
+        function displayQuote() {
+            const quoteElement = document.getElementById('quote');
+            const authorElement = document.getElementById('author');
+            const quote = getRandomQuote();
+            quoteElement.textContent = `"${quote.text}"`;
+            authorElement.textContent = `- ${quote.author}`;
+        }
+
+        // Add event listener to generate quote button
+        document.getElementById('generate-btn').addEventListener('click', displayQuote);
+
+    </script>
+    <script src="quote_dark.js"></script>
+</body>
+
+</html>

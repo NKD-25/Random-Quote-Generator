@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" type="image" href="logo.png">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ebeef5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navbar */
+        #navbar1 {
+            width: 100%;
+            background-color: #fcc62e;
+            color: #133042;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .a1 {
+            text-decoration: none;
+            color: #133042;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .a1:hover {
+            background-color: #133042;
+            color: #fcc62e;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        #navbar1 i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        #mode-toggle {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            font-size: 35px;
+            color: #ffbb00;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* About Us Content Section */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 80px;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .about-container .about-card {
+            width: 300px;
+            background-color: #fcc62e;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .about-container .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-container .about-card img {
+            width: 80%;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .about-container .about-card h3 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #133042;
+        }
+
+        .about-container .about-card p {
+            font-size: 16px;
+            color: #133042;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-container .about-card {
+                width: 90%;
+            }
+
+            #navbar1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar1">
+        <a href="first.html" class="a1"><i class="fa-solid fa-house"></i> Home</a>
+    </div>
+    <button id="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+    <!-- About Us Section -->
+    <div class="about-container">
+        <div class="about-card">
+            <img src="lakshay.jpg" alt="Student 1">
+            <h3>Lakshay Rana</h3>
+            <p>Hi! I'm Lakshay Rana, a computer science major at the university. I'm passionate about coding and web
+                development, and I love working on creative projects like this one!</p>
+        </div>
+
+        <div class="about-card">
+            <img src="hiten.jpg" alt="Student 2">
+            <h3>Hiten Jindal</h3>
+            <p>Hello, I'm Hiten Jindal, studying software engineering. I enjoy learning about new technologies and
+                frameworks, and I'm excited to contribute to the success of this project!</p>
+        </div>
+
+        <div class="about-card">
+            <img src="lucky.jpg" alt="Student 3">
+            <h3>Lucky Arora</h3>
+            <p>Hey! I'm Lucky Arora, a web developer at heart. I specialize in front-end development and design, and I'm
+                thrilled to be part of this awesome project with my teammates!</p>
+        </div>
+    </div>
+    <script>
+        const toggleBtn = document.getElementById('mode-toggle');
+        const body = document.body;
+        const logo = document.getElementById('logo')
+
+        // Check if dark mode is already set in localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            body.classList.remove('light-mode');
+            toggleBtn.querySelector('i').classList.remove('fa-moon');
+            toggleBtn.querySelector('i').classList.add('fa-sun');
+            logo.src = 'logo.png';
+        }
+
+        // Toggle Dark Mode and Light Mode
+        toggleBtn.addEventListener('click', () => {
+            const icon = toggleBtn.querySelector('i');
+
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                logo.src = 'logo-dark.png';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                logo.src = 'logo.png';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+</body>
+
+</html>

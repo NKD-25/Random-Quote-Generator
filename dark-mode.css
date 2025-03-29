@@ -1,0 +1,82 @@
+.dark-mode #navbar1 {
+    background-color: #343a40;
+}
+
+.dark-mode .a1 {
+    color: rgb(195, 193, 193);
+}
+
+.dark-mode .container {
+    color: rgb(195, 193, 193);
+}
+
+.btn-toggle {
+    background-color: #fcc62e;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: backgorund-color 0.3s;
+}
+
+.btn_toggle:hover {
+    background-color: #fcc62e;
+}
+
+.dark-mode .btn-toggle {
+    background-color: #343a40;
+    color: #fcc62e;
+}
+
+.dark-mode .btn-toggle:hover {
+    background-color: #505050;
+}
+
+.dark-mode .clickable-div {
+    background-color: #343a40;
+
+}
+
+/* Quote heading */
+.dark-mode .clickable-div h2 {
+    color: rgb(195, 193, 193);
+}
+
+.dark-mode {
+    background-color: #000000;
+    background: linear-gradient(315deg, rgba(10, 10, 10, 1) 3%, rgba(50, 50, 50, 1) 38%, rgba(20, 20, 20, 1) 68%, rgba(0, 0, 0, 1) 98%);
+    color: white;
+}
+
+.dark-mode-transition {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode #intro-text {
+    color: #fcc62e;
+}
+
+.dark-mode #intro-description {
+    color: rgb(195, 193, 193);
+}
+
+/* Get Started button */
+.dark-mode .btn-explore {
+    background-color: #505050;
+    color: rgb(195, 193, 193);
+}
+
+.dark-mode .about-container .about-card {
+    background-color: #505050;
+}
+
+.dark-mode .about-container .about-card h3 {
+    color: rgb(195, 193, 193);
+}
+
+.dark-mode .about-container .about-card p {
+    color: rgb(195, 193, 193);
+}
+
+.dark-mode #typewriter-text {
+    color: rgb(195, 193, 193);
+}

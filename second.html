@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotopia</title>
+    <link rel="icon" type="image" href="logo.png">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="wave-animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* General Body Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ebeef5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* to make image and text side by side */
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 60px;
+        }
+
+        .text-container,
+        .image-container {
+            text-align: center;
+        }
+
+        #animated-text {
+            opacity: 0;
+            animation: openClosetext 4s infinite;
+            font-size: 55px;
+            margin-top: 70px;
+        }
+
+        #animated-image {
+            opacity: 0;
+            animation: openClosetext 4s infinite;
+            transition: opacity 0.3s ease;
+            width: 120px;
+        }
+
+        @keyframes openClosetext {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        /* Navigation Bar */
+        #navbar1 {
+            width: 100%;
+            background-color: #fcc62e;
+            color: #133042;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            display: flex;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        /* Navbar content  */
+        .a1 {
+            text-decoration: none;
+            color: #133042;
+            display: inline-flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .a1:hover {
+            background-color: #133042;
+            color: #fcc62e;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        #navbar1 i {
+            margin-right: 10px;
+            margin-bottom: 2px;
+        }
+
+        #mode-toggle {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            font-size: 35px;
+            color: #ffbb00;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+
+        /* Main Content */
+        .content {
+            margin-top: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .content a {
+            text-decoration: none;
+        }
+
+        .clickable-div {
+            width: 300px;
+            height: 380px;
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background-color: #fcc62e;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .clickable-div img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+
+        .clickable-div h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #133042;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .clickable-div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .clickable-div:hover img {
+            opacity: 0.8;
+        }
+
+        /* Hover Effects */
+        .clickable-div:hover h2 {
+            color: #fcc62e;
+            background-color: #133042;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .clickable-div {
+                width: 80%;
+            }
+
+            #he1 {
+                font-size: 48px;
+            }
+
+            #navbar1 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Wave animation -->
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+    <!-- Header -->
+    <div class="container">
+        <div class="image-container">
+            <img src="logo.png" alt="logo" id="animated-image">
+        </div>
+        <div class="text-container">
+            <p id="animated-text">uotopia</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <div id="navbar1">
+        <div id="home-icon"><a href="first.html" class="a1" id="home"><i class="fa-solid fa-house"></i> Home</a>
+        </div>
+        <div><a href="about-us.html" class="a1">About us</a></div>
+    </div>
+
+    <!-- Dark mode button -->
+    <button id="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+
+    <!-- Main Content -->
+    <div class="content">
+        <a href="education.html" target="_blank">
+            <div class="clickable-div">
+                <img src="https://i.pinimg.com/564x/67/18/22/671822c2f63dd5f65d8fd15c9710420b.jpg"
+                    alt="Education Quotes">
+                <h2>Educational Quote</h2>
+            </div>
+        </a>
+
+        <a href="relationship.html" target="_blank">
+            <div class="clickable-div">
+                <img src="https://img.freepik.com/premium-vector/silhouette-young-man-with-rose-proposing-his-beloved-sea-beach-background_619130-595.jpg?w=900"
+                    alt="Relationship Quotes">
+                <h2>Relationship Quote</h2>
+            </div>
+        </a>
+
+        <a href="wisdom.html" target="_blank">
+            <div class="clickable-div">
+                <img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Wisdom Quotes">
+                <h2>Wisdom Quote</h2>
+            </div>
+        </a>
+
+        <a href="motivation.html" target="_blank">
+            <div class="clickable-div">
+                <img src="https://www.nextplatform.com/wp-content/uploads/2020/02/ab_multi-cloud-1030x438.jpg"
+                    alt="Motivational Quotes">
+                <h2>Motivational Quote</h2>
+            </div>
+        </a>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('mode-toggle');
+        const body = document.body;
+        const icon = toggleBtn.querySelector('i'); // Reference to the icon
+        const logo = document.getElementById('animated-image');
+
+        // Check if dark mode is already set in localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            body.classList.remove('light-mode');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+            logo.src = 'logo-dark.png';
+        } else {
+            body.classList.add('light-mode');
+            body.classList.remove('dark-mode');
+            icon.classList.remove('fa-sun');
+            icon.classList.add('fa-moon');
+            logo.src = 'logo.png';
+
+        }
+
+        // Toggle Dark Mode and Light Mode
+        toggleBtn.addEventListener('click', () => {
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                logo.src = 'logo.png';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                logo.src = 'logo-dark.png';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+
+</html>

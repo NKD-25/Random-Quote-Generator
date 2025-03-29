@@ -24,5 +24,16 @@ Instructions on how to set up the project:
 4. Open the project folder in any text editor like notepad ,vs code (preferred).
 5. Make the changes in the code according to you.
 
+SCREEN-SHOTS OF WEBSITE:
+
+![Screenshot 2025-03-29 194843](https://github.com/user-attachments/assets/463c4fa0-6908-4c30-a265-b7ddf075f907)
+![Screenshot 2025-03-29 194859](https://github.com/user-attachments/assets/6bd5c144-ca57-49aa-a76f-4522f01d9ec5)
+![Screenshot 2025-03-29 194917](https://github.com/user-attachments/assets/a5f0dc42-4c3e-4b1a-92e9-55f37f113609)
+![Screenshot 2025-03-29 194940](https://github.com/user-attachments/assets/00870ca2-c74e-4103-a253-7aee2fa9c28e)
+
+
+
+
+
 @@@@@@ THANK-YOU @@@@@@
 

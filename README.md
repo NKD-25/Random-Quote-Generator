@@ -1,4 +1,4 @@
-@@@@@@@@@@@@@@@@@@@@@@ RANDOM-QUOTE-GENERATOR @@@@@@@@@@@@@@@@@@@@@@
+@@@@@@ RANDOM-QUOTE-GENERATOR @@@@@@
 
 DESCRIPTION:   
 
@@ -24,5 +24,5 @@ Instructions on how to set up the project:
 4. Open the project folder in any text editor like notepad ,vs code (preferred).
 5. Make the changes in the code according to you.
 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@ THANK-YOU @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@ THANK-YOU @@@@@@
 

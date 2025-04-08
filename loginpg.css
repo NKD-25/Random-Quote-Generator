@@ -12,7 +12,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: #111;
+	background: #050505;
 }
 
 .form{
@@ -50,9 +50,9 @@ body{
 }
 
 .form .user-input:hover, .form .user-input:focus, .form .user-input:active{
-	border-left: solid 8px #0e5b99;
-	border-right: solid 8px #0e5b99;
-	box-shadow: 0 0 100px rgba(40, 213, 248, 0.8);
+	border-left: solid 8px #d45805;
+	border-right: solid 8px #d45805;
+	box-shadow: 0 0 100px rgba(209, 251, 2, 0.8);
 }
 
 .form .options-01{
@@ -86,7 +86,7 @@ body{
 	border: none;
 	width: 320px;
 	height: 55px;
-	background: #4285F4;
+	background: #a88711;
 	color: #fff;
 	font-size: 18px;
 	letter-spacing: 1px;
@@ -99,7 +99,7 @@ body{
 .form .btn:hover{
 	border-left: solid 8px rgba(255, 255, 255, 0.5);
 	border-right: solid 8px rgba(255, 255, 255, 0.5);
-	box-shadow: 0 0 100px rgba(66, 133, 244, 0.8);
+	box-shadow: 0 0 100px rgba(238, 255, 2, 0.8);
 }
 
 .form .options-02{
@@ -109,7 +109,7 @@ body{
 }
 
 .form .options-02 a{
-	color: #4285F4;
+	color: #abb727;
 }
 
 /* Responsive CSS */

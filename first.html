@@ -23,9 +23,83 @@
             justify-content: center;
         }
 
+        .boat-container {
+            position: absolute;
+            bottom: 80px;
+            /* Adjust to float on the wave */
+            left: 0;
+            animation: sail 15s linear infinite;
+            z-index: 5;
+        }
+
+        #boat1 {
+            font-size: 20px;
+            width: 10px;
+            height: auto;
+            animation: bob 2s ease-in-out infinite;
+        }
+
+        #boat2 {
+            font-size: 50px;
+            width: 55px;
+            height: auto;
+            animation: bob 2s ease-in-out infinite;
+        }
+
+        #boat3 {
+            font-size: 35px;
+            width: 30px;
+            height: auto;
+            animation: bob 2s ease-in-out infinite;
+        }
+
+        .boat1 {
+            animation: sail 20s linear infinite;
+            animation-delay: 0s;
+        }
+
+        .boat2 {
+            animation: sail 25s linear infinite;
+            animation-delay: 5s;
+        }
+
+        .boat3 {
+            animation: sail 30s linear infinite;
+            animation-delay: 10s;
+        }
+
+
+
+
+        /* Boat moves horizontally */
+        @keyframes sail {
+            0% {
+                left: -10%;
+            }
+
+            100% {
+                left: 110%;
+            }
+        }
+
+
+
+        /* Boat bobs up and down */
+        @keyframes bob {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         #navbar1 {
             width: 100%;
-            background-color: #fcc62e;
+            background-color: #f5ba18;
             color: #133042;
             padding: 15px 30px;
             font-size: 24px;
@@ -51,7 +125,7 @@
 
         .a1:hover {
             background-color: #133042;
-            color: #fcc62e;
+            color: #fdd25c;
             padding: 4px 8px;
             border-radius: 4px;
         }
@@ -128,7 +202,7 @@
 
         .btn-explore {
             padding: 15px 30px;
-            background-color: #fcc62e;
+            background-color: #f5bf29;
             color: #133042;
             font-size: 20px;
             font-weight: bold;
@@ -178,7 +252,7 @@
             background-color: transparent;
             border: none;
             font-size: 35px;
-            color: #ffbb00;
+            color: #656463;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
@@ -203,6 +277,22 @@
     </style>
 </head>
 <body>
+    <!-- Boat 1 -->
+    <div class="boat-container  boat1">
+        <i class="fa-solid fa-sailboat" id="boat1"></i>
+    </div>
+
+    <!-- Boat 2 -->
+    <div class="boat-container boat2">
+        <i class="fa-solid fa-sailboat" id="boat2"></i>
+    </div>
+
+    <!-- Boat 3 -->
+    <div class="boat-container boat3">
+        <i class="fa-solid fa-sailboat" id="boat3"></i>
+    </div>
+
+
     <!-- Wave animation -->
     <div>
         <div class="wave"></div>
@@ -213,12 +303,16 @@
     <!-- Navbar -->
     <div id="navbar1">
         <div id="home-icon"><a href="first.html" class="a1" id="home">
-                <div><i class="fa-solid fa-house"></i></div> HOME
+                <div><i class="fa-solid fa-house"></i></div> Home
             </a>
         </div>
+
         <div><a href="about-us.html" class="a1" id="about-us">ABOUT US</a></div>
         <div><a href="explore.html" class="a1" id="explore">EXPLORE</a></div>
         <div class ="login-button"><a href="loginpg.html" class="a1" id="login">LOGIN</a></div>
+        <div><a href="about-us.html" class="a1" id="about-us">About us</a></div>
+        <div><a href="explore.html" class="a1" id="explore">Explore</a></div>
+     
     </div>
 
     <!-- Dark Mode Button -->
@@ -289,7 +383,7 @@
             let index = 0;
 
             // Function to simulate typing effect
-            function typeText() {                     
+            function typeText() {
                 if (index < textToType.length) {
                     typewriterText.textContent += textToType[index];            // adds one character from textToType to typewriterText.textContent
                     index++;

@@ -1,5 +1,5 @@
 .dark-mode #navbar1 {
-    background-color: #343a40;
+    background-color: #2e343a;
 }
 
 .dark-mode .a1 {
@@ -11,20 +11,20 @@
 }
 
 .btn-toggle {
-    background-color: #fcc62e;
-    color: #333;
+    background-color: #fcc01a;
+    color: #555657;
     font-size: 16px;
     cursor: pointer;
     transition: backgorund-color 0.3s;
 }
 
 .btn_toggle:hover {
-    background-color: #fcc62e;
+    background-color: #fcc01a;
 }
 
 .dark-mode .btn-toggle {
-    background-color: #343a40;
-    color: #fcc62e;
+    background-color: #2e343a;
+    color: #fcc01a;
 }
 
 .dark-mode .btn-toggle:hover {
@@ -32,7 +32,7 @@
 }
 
 .dark-mode .clickable-div {
-    background-color: #343a40;
+    background-color: #2e343a;
 
 }
 
@@ -52,7 +52,7 @@
 }
 
 .dark-mode #intro-text {
-    color: #fcc62e;
+    color: #fcc01a;
 }
 
 .dark-mode #intro-description {

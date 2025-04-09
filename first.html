@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,7 +76,6 @@
             display: inline-block;
             overflow: hidden;
             border-right: 3px solid #133042;
-            /* Add a cursor effect */
             white-space: nowrap;
             width: 0;
             animation: typing 3s steps(10) 1s forwards, blink-caret 0.75s step-end infinite;
@@ -148,12 +146,30 @@
         .logo-container img {
             width: 120px;
             margin-bottom: 30px;
-            transition: transform 0.3s ease;
+        }
+        .login-button {
+            position: absolute;
+            top: 10px;
+            right: 60px;
+            z-index: 10;
         }
 
-        .logo-container img:hover {
-            transform: scale(1.13);
+        .login-button a {
+            background-color: #fcc62e;
+            color: #133042;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+            transition: all 0.3s ease;
         }
+
+        .login-button a:hover {
+            background-color: #133042;
+            color: #fcc62e;
+        }
+
 
         #mode-toggle {
             position: absolute;
@@ -186,7 +202,6 @@
         }
     </style>
 </head>
-
 <body>
     <!-- Wave animation -->
     <div>
@@ -194,6 +209,7 @@
         <div class="wave"></div>
         <div class="wave"></div>
     </div>
+
     <!-- Navbar -->
     <div id="navbar1">
         <div id="home-icon"><a href="first.html" class="a1" id="home">
@@ -202,6 +218,7 @@
         </div>
         <div><a href="about-us.html" class="a1" id="about-us">ABOUT US</a></div>
         <div><a href="explore.html" class="a1" id="explore">EXPLORE</a></div>
+        <div class ="login-button"><a href="loginpg.html" class="a1" id="login">LOGIN</a></div>
     </div>
 
     <!-- Dark Mode Button -->
@@ -282,8 +299,6 @@
 
             typeText(); // Start typing the text
         });
-
     </script>
 </body>
-
 </html>

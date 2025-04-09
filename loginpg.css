@@ -73,14 +73,21 @@ body{
 	display: none;
 }
 
+#icn{
+	color: #133042;
+}
+#icn2{
+	color: #133042;
+}
+
 .form .user-input{
 	width: 320px;
 	height: 55px;
 	margin-bottom: 30px;
 	outline: none;
 	border: none;
-	background: rgba(255, 255, 255, 0.2);
-	color: #fff;
+	background: rgb(44, 57, 67);
+	color: rgba(245,198,81);
 	font-size: 18px;
 	text-align: center;
 	border-radius: 5px;
@@ -89,14 +96,9 @@ body{
 }
 
 .form .user-input:hover, .form .user-input:focus, .form .user-input:active{
-
-	border-left: solid 8px #0e5b99;
-	border-right: solid 8px #0e5b99;
-	box-shadow: 0 0 100px rgba(40, 213, 248, 0.8);
-	border-left: solid 8px #d45805;
-	border-right: solid 8px #d45805;
-	box-shadow: 0 0 100px rgba(209, 251, 2, 0.8);
-
+	border-left: solid 8px rgb(244, 192, 61);
+	border-right: solid 8px rgb(241, 189, 59);
+	box-shadow: 0 0 100px rgba(245,198,81);
 }
 
 .form .options-01{
@@ -110,7 +112,7 @@ body{
 }
 
 .form .options-01 .remember-me{
-	color: #bbb;
+	color: #7b7b7b;
 	font-size: 14px;
 	display: flex;
 	align-items: center;
@@ -123,6 +125,10 @@ body{
 	font-size: 14px;
 	font-style: italic;
 	float: right;
+}
+#home-icon {
+	display: flex;
+	align-items: center;
 }
 
 .form .btn{

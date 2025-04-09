@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +22,46 @@
             align-items: center;
             min-height: 100vh;
             justify-content: center;
+        }
+
+        .boat-container {
+            position: absolute;
+            bottom: 80px;
+            /* Adjust to float on the wave */
+            left: 0;
+            animation: sail 15s linear infinite;
+            z-index: 5;
+        }
+
+        #boat {
+            font-size: 50px;
+            width: 50px;
+            height: auto;
+            animation: bob 2s ease-in-out infinite;
+        }
+
+        /* Boat moves horizontally */
+        @keyframes sail {
+            0% {
+                left: -60px;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Boat bobs up and down */
+        @keyframes bob {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         #navbar1 {
@@ -76,6 +117,7 @@
             display: inline-block;
             overflow: hidden;
             border-right: 3px solid #133042;
+            /* Add a cursor effect */
             white-space: nowrap;
             width: 0;
             animation: typing 3s steps(10) 1s forwards, blink-caret 0.75s step-end infinite;
@@ -146,6 +188,11 @@
         .logo-container img {
             width: 120px;
             margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.13);
         }
 
         #mode-toggle {
@@ -179,22 +226,38 @@
         }
     </style>
 </head>
+
 <body>
+    <!-- Boat 1 -->
+<div class="boat-container" style="animation-delay: 0s;">
+    <i class="fa-solid fa-sailboat" id="boat"></i>
+</div>
+
+<!-- Boat 2 -->
+<div class="boat-container" style="animation-delay: 5s;">
+    <i class="fa-solid fa-sailboat" id="boat"></i>
+</div>
+
+<!-- Boat 3 -->
+<div class="boat-container" style="animation-delay: 10s;">
+    <i class="fa-solid fa-sailboat" id="boat"></i>
+</div>
+
+    
     <!-- Wave animation -->
     <div>
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
     </div>
-
     <!-- Navbar -->
     <div id="navbar1">
         <div id="home-icon"><a href="first.html" class="a1" id="home">
-                <div><i class="fa-solid fa-house"></i></div> HOME
+                <div><i class="fa-solid fa-house"></i></div> Home
             </a>
         </div>
-        <div><a href="about-us.html" class="a1" id="about-us">ABOUT US</a></div>
-        <div><a href="explore.html" class="a1" id="explore">EXPLORE</a></div>
+        <div><a href="about-us.html" class="a1" id="about-us">About us</a></div>
+        <div><a href="explore.html" class="a1" id="explore">Explore</a></div>
     </div>
 
     <!-- Dark Mode Button -->
@@ -265,7 +328,7 @@
             let index = 0;
 
             // Function to simulate typing effect
-            function typeText() {                     
+            function typeText() {
                 if (index < textToType.length) {
                     typewriterText.textContent += textToType[index];            // adds one character from textToType to typewriterText.textContent
                     index++;
@@ -275,6 +338,8 @@
 
             typeText(); // Start typing the text
         });
+
     </script>
 </body>
+
 </html>

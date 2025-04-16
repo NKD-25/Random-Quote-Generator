@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,7 +134,19 @@
         #home-icon {
             display: flex;
             align-items: center;
+            font-size: 24px;
         }
+
+        #home-icon i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        #home-icon i {
+            vertical-align: middle;
+        }
+
+
 
         #navbar1 i {
             margin-right: 10px;
@@ -221,6 +234,7 @@
             width: 120px;
             margin-bottom: 30px;
         }
+
         .login-button {
             position: absolute;
             top: 10px;
@@ -276,6 +290,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Boat 1 -->
     <div class="boat-container  boat1">
@@ -303,15 +318,15 @@
     <!-- Navbar -->
     <div id="navbar1">
         <div id="home-icon"><a href="first.html" class="a1" id="home">
-                <div><i class="fa-solid fa-house">Home</i></div>
+                <div><i class="fa-solid fa-house"></i>Home</div>
             </a>
         </div>
 
         <div><a href="about-us.html" class="a1" id="about-us">Team</a></div>
         <div><a href="explore.html" class="a1" id="explore">Explore</a></div>
-        <div class ="login-button"><a href="loginpg.html" class="a1" id="login">Login/Signup</a></div>
-       
-     
+        <div class="login-button"><a href="loginpg.html" class="a1" id="login">Login/Signup</a></div>
+
+
     </div>
 
     <!-- Dark Mode Button -->
@@ -394,4 +409,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -38,6 +38,10 @@ body{
 	left: 0;
 	z-index: 10;
 }
+#navbar1 i {
+	margin-right: 10px;
+	font-size: 28px;
+}
 .a1 {
 	text-decoration: none;
 	color: #133042;
@@ -166,6 +170,21 @@ body{
 .form .options-02 a{
 	color: #4285F4;
 	color: #abb727;
+}
+#mode-toggle {
+	position: absolute;
+	top: 100px;
+	right: 20px;
+	background-color: transparent;
+	border: none;
+	font-size: 35px;
+	color: #ffbb00;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+#mode-toggle:hover {
+	transform: scale(1.1);
 }
 
 /* Responsive CSS */

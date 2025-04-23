@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        
         body {
             margin: 0;
             padding: 0;
@@ -68,9 +70,6 @@
             animation-delay: 10s;
         }
 
-
-
-
         /* Boat moves horizontally */
         @keyframes sail {
             0% {
@@ -81,8 +80,6 @@
                 left: 110%;
             }
         }
-
-
 
         /* Boat bobs up and down */
         @keyframes bob {
@@ -99,7 +96,7 @@
 
         #navbar1 {
             width: 100%;
-            background-color: #f5ba18;
+            background-color: #fcc62e;
             color: #133042;
             padding: 15px 30px;
             font-size: 24px;
@@ -125,7 +122,7 @@
 
         .a1:hover {
             background-color: #133042;
-            color: #fdd25c;
+            color: #fcc62e;
             padding: 4px 8px;
             border-radius: 4px;
         }
@@ -133,6 +130,16 @@
         #home-icon {
             display: flex;
             align-items: center;
+            font-size: 24px;
+        }
+
+        #home-icon i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        #home-icon i {
+            vertical-align: middle;
         }
 
         #navbar1 i {
@@ -202,7 +209,7 @@
 
         .btn-explore {
             padding: 15px 30px;
-            background-color: #f5bf29;
+            background-color: #fcc62e;
             color: #133042;
             font-size: 20px;
             font-weight: bold;
@@ -221,6 +228,7 @@
             width: 120px;
             margin-bottom: 30px;
         }
+
         .login-button {
             position: absolute;
             top: 10px;
@@ -244,7 +252,6 @@
             color: #fcc62e;
         }
 
-
         #mode-toggle {
             position: absolute;
             top: 100px;
@@ -261,21 +268,127 @@
             transform: scale(1.1);
         }
 
-        @media (max-width: 768px) {
-            #intro-text {
-                font-size: 30px;
-            }
-
-            .btn-explore {
-                font-size: 18px;
-            }
-
-            .logo-container img {
-                width: 100px;
+        /* Chatbot styles */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            border: 1px solid #ffd700;
+            transform: translateX(110%);
+            transition: transform 0.3s cubic-bezier(.4,2,.2,1);
+        }
+        .chat-container.visible {
+            transform: translateX(0);
+        }
+        .chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            color: #333;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+            z-index: 101;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #333;
+            cursor: pointer;
+        }
+        .chat-header {
+            padding: 18px 0 12px 0;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            color: #333;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 18px;
+            overflow-y: auto;
+            background: #fffbe6;
+        }
+        .chat-input {
+            padding: 12px;
+            display: flex;
+            gap: 10px;
+            background: #fffbe6;
+            border-radius: 0 0 15px 15px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+        }
+        .chat-input button {
+            background: #ffd700;
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 22px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .chat-input button:hover {
+            background: #ffed4a;
+        }
+        .bot-message {
+            background: #ffe066;
+            border-radius: 12px;
+            padding: 8px 14px;
+            margin-bottom: 8px;
+            color: #333;
+            align-self: flex-start;
+            max-width: 80%;
+        }
+        .user-message {
+            background: #fff;
+            border-radius: 12px;
+            padding: 8px 14px;
+            margin-bottom: 8px;
+            color: #333;
+            align-self: flex-end;
+            max-width: 80%;
+        }
+        @media (max-width: 600px) {
+            .chat-container {
+                width: 95vw;
+                height: 60vh;
+                right: 2vw;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Boat 1 -->
     <div class="boat-container  boat1">
@@ -292,7 +405,6 @@
         <i class="fa-solid fa-sailboat" id="boat3"></i>
     </div>
 
-
     <!-- Wave animation -->
     <div>
         <div class="wave"></div>
@@ -303,20 +415,37 @@
     <!-- Navbar -->
     <div id="navbar1">
         <div id="home-icon"><a href="first.html" class="a1" id="home">
-                <div><i class="fa-solid fa-house"></i></div> Home
+                <div><i class="fa-solid fa-house"></i>Home</div>
             </a>
         </div>
 
-        <div><a href="about-us.html" class="a1" id="about-us">ABOUT US</a></div>
-        <div><a href="explore.html" class="a1" id="explore">EXPLORE</a></div>
-        <div class ="login-button"><a href="loginpg.html" class="a1" id="login">LOGIN</a></div>
-        <div><a href="about-us.html" class="a1" id="about-us">About us</a></div>
+        <div><a href="about-us.html" class="a1" id="about-us">Team</a></div>
         <div><a href="explore.html" class="a1" id="explore">Explore</a></div>
-     
+        <div class="login-button"><a href="loginpg.html" class="a1" id="login">Login/Signup</a></div>
     </div>
 
     <!-- Dark Mode Button -->
     <button id="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+
+    <!-- Chat toggle button -->
+    <button class="chat-toggle" onclick="toggleChat()">
+        <i class="fas fa-comment"></i>
+    </button>
+
+    <!-- Chat container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            Quote Bot
+            <button class="close-button" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
 
     <!-- Intro -->
     <div class="intro-container">
@@ -393,6 +522,66 @@
 
             typeText(); // Start typing the text
         });
+
+        function toggleChat() {
+            const chatContainer = document.getElementById('chatContainer');
+            const chatToggle = document.querySelector('.chat-toggle');
+            if (chatContainer.classList.contains('visible')) {
+                chatContainer.classList.remove('visible');
+                chatToggle.style.display = 'flex';
+            } else {
+                chatContainer.classList.add('visible');
+                chatToggle.style.display = 'none';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('chatContainer').classList.remove('visible');
+            document.querySelector('.chat-toggle').style.display = 'flex';
+
+            // --- Simple Chatbot Logic ---
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            const responses = {
+                'hello': 'Hi there! How can I help you today?',
+                'quote': 'Here\'s a random quote for you:',
+                'default': 'I\'m here to help! You can ask for quotes or just chat.'
+            };
+            const quotes = [
+                'Believe you can and you\'re halfway there. - Theodore Roosevelt',
+                'Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill',
+                'The only true wisdom is in knowing you know nothing. - Socrates'
+            ];
+            function getBotResponse(input) {
+                input = input.toLowerCase();
+                if (input.includes('quote')) {
+                    return quotes[Math.floor(Math.random() * quotes.length)];
+                }
+                return responses[input] || responses['default'];
+            }
+            function addMessage(message, isBot = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = isBot ? 'bot-message' : 'user-message';
+                messageDiv.textContent = message;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            function handleSend() {
+                const message = userInput.value.trim();
+                if (!message) return;
+                addMessage(message, false);
+                userInput.value = '';
+                setTimeout(() => {
+                    addMessage(getBotResponse(message), true);
+                }, 600);
+            }
+            sendButton.addEventListener('click', handleSend);
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleSend();
+            });
+            addMessage('Welcome! I can help you with quotes and general conversation.', true);
+        });
     </script>
 </body>
+
 </html>

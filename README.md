@@ -1,6 +1,8 @@
 @@@@@@ RANDOM-QUOTE-GENERATOR @@@@@@
 
-DESCRIPTION:   
+DESCRIPTION: 
+
+Welcome to our Random Quote Generator! Dive into a world of inspiration and wisdom with just a click. Whether you're seeking motivation, a spark of creativity, or a thought-provoking idea, our extensive collection of quotes from renowned thinkers, writers, and visionaries is here to uplift your spirit. Refresh your perspective and discover new insights as you explore a diverse range of quotes that resonate with every mood and moment. Let the power of words inspire you today!
 
 The Random Quote Generator is a simple yet engaging web application designed to inspire and motivate users by providing them with a random quote each time they interact with the application. This project combines front-end and back-end technologies to create a seamless user experience, allowing users to refresh quotes, share them on social media, and even save their favorites.
 
@@ -30,6 +32,14 @@ SCREEN-SHOTS OF WEBSITE:
 ![Screenshot 2025-03-29 194859](https://github.com/user-attachments/assets/6bd5c144-ca57-49aa-a76f-4522f01d9ec5)
 ![Screenshot 2025-03-29 194917](https://github.com/user-attachments/assets/a5f0dc42-4c3e-4b1a-92e9-55f37f113609)
 ![Screenshot 2025-03-29 194940](https://github.com/user-attachments/assets/00870ca2-c74e-4103-a253-7aee2fa9c28e)
+![Screenshot 2025-04-26 165024](https://github.com/user-attachments/assets/9c18a338-6ad3-45f9-bafb-e19edca382e2)
+![Screenshot 2025-04-26 165008](https://github.com/user-attachments/assets/21c160b3-3986-44ee-9f03-f941fd3fa7cd)
+![Screenshot 2025-04-26 165039](https://github.com/user-attachments/assets/2a20f3ae-34c0-464a-9856-286135d79690)
+![Screenshot 2025-04-26 165108](https://github.com/user-attachments/assets/cbb97122-1e8a-48e9-9e19-7427e390143f)
+
+
+
+
 
 
 

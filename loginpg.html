@@ -10,10 +10,10 @@
 		<link rel="stylesheet" href="loginpg.css">
 		<link rel="stylesheet" href="dark-mode.css">
 		<link rel="stylesheet" href="wave-animation.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+		<link rel="stylesheet" href="loginpg.css">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
 	</head>
 	<body>
@@ -24,15 +24,12 @@
 				
 			</video>
 		</div>
-		
-		<!-- Dark Mode Toggle Button -->
-		<button id="mode-toggle"><i class="fa-solid fa-moon"></i></button>
 
 		<!--form area start-->
 		<div class="form">
 			<!--login form start-->
 			<form class="login-form" action="ev2.html" method="">
-				<i  id = "icn" class="fas fa-user-circle"></i>
+				<i class="fas fa-user-circle"></i>
 				<input class="user-input" type="text" name="" placeholder="Username" required>
 				<input class="user-input" type="password" name="" placeholder="Password" required>
 				<div class="options-01">
@@ -56,7 +53,7 @@
 			<!--login form end-->
 			<!--signup form start-->
 			<form class="signup-form" action="ev2.html" method="">
-				<i id ="icn2" class="fas fa-user-plus"></i>
+				<i class="fas fa-user-plus"></i>
 				<input class="user-input" type="text" name="" placeholder="Username" required>
 				<input class="user-input" type="email" name="" placeholder="Email Address" required>
 				<input class="user-input" type="password" name="" placeholder="Password" required>
@@ -66,7 +63,6 @@
 				</div>
 			</form>
 			<!--signup form end-->
-
 		</div>
 
 		<div id="navbar1">
@@ -84,40 +80,6 @@
 				height: "toggle", opacity: "toggle"
 			}, "slow");
 		});
-		const toggleBtn = document.getElementById('mode-toggle');
-        const body = document.body;
-        const logo = document.getElementById('logo')
-
-        // Check if dark mode is already set in localStorage
-        if (localStorage.getItem('theme') === 'dark') {
-            body.classList.add('dark-mode');
-            body.classList.remove('light-mode');
-            toggleBtn.querySelector('i').classList.remove('fa-moon');
-            toggleBtn.querySelector('i').classList.add('fa-sun');
-            logo.src = 'logo-dark.png';
-        }
-
-        // Toggle Dark Mode and Light Mode
-        toggleBtn.addEventListener('click', () => {
-            const icon = toggleBtn.querySelector('i');
-
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-                logo.src = 'logo-dark.png';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-                logo.src = 'logo.png';
-                localStorage.setItem('theme', 'light');
-            }
-
-        });
 		</script>
 
 	</body>

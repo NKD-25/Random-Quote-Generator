@@ -3,11 +3,11 @@
 }
 
 .dark-mode .a1 {
-    color: rgb(195, 193, 193);
+    color: rgb(195, 193, 194);
 }
 
 .dark-mode .container {
-    color: rgb(195, 193, 193);
+    color: rgb(195, 193, 194);
 }
 
 .btn-toggle {
@@ -38,7 +38,7 @@
 
 /* Quote heading */
 .dark-mode .clickable-div h2 {
-    color: rgb(195, 193, 193);
+    color: rgb(195, 193, 194);
 }
 
 .dark-mode {

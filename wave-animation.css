@@ -45,7 +45,7 @@ body {
 .wave:nth-of-type(3) {
     bottom: -2.5em;
     animation: wave 20s -1s reverse infinite;
-    opacity: 0.9;
+    opacity: 0.91;
 }
 
 @keyframes wave {

@@ -3,7 +3,7 @@ const body = document.body;
 const icon = toggleBtn.querySelector('i');
 const logo = document.getElementById('animated-image'); // Reference to logo element
 
-// Check if dark mode is already set in localStorage
+// Check if dark mode is already set in LocalStorage
 if (localStorage.getItem('theme') === 'dark') {
     body.classList.add('dark-mode');
     body.classList.remove('light-mode');

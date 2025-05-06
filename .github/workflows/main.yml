@@ -1,8 +1,8 @@
 
 project:
-  name: Random Quote Generator
-  description: Frontend configuration procedure for the Random Quote Generator project
-  version: 1.0.0
+name: Random Quote Generator
+description: Frontend configuration procedure for the Random Quote Generator project
+  
 
 prerequisites:
   - Modern web browser (Chrome, Firefox, Edge, Safari)

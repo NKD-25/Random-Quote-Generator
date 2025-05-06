@@ -1,8 +1,6 @@
-
 project:
-name: Random Quote Generator
-description: Frontend configuration procedure for the Random Quote Generator project
-  
+  name: Random Quote Generator
+  description: Frontend configuration procedure for the Random Quote Generator project
 
 prerequisites:
   - Modern web browser (Chrome, Firefox, Edge, Safari)
@@ -74,10 +72,6 @@ troubleshooting:
   - Issue: Button click does not update quote
     solution: Ensure event listeners are correctly attached and JavaScript logic is error-free.
 
-
-
-
-
 app:
   name: Random Quote Generator
   version: 1.0.0
@@ -106,4 +100,3 @@ quotes:
     text: "In three words I can sum up everything I've learned about life: it goes on."
     author: "Robert Frost"
     category: "life"
- - and many more ...........................

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Quotopia</title>
+    <link rel="icon" type="image" href="logo.png">
+    <link rel="stylesheet" href="dark-mode.css">
+    <link rel="stylesheet" href="wave-animation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #ebeef5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .boat-container {
+            position: absolute;
+            bottom: 80px;
+            /* Adjust to float on the wave */
+            left: 0;
+            animation: sail 15s linear infinite;
+            z-index: 5;
+        }
+
+        #boat1 {
+            font-size: 20px;
+            width: 10px;
+            height: auto;
+            animation: bob 2s ease-in-out infinite;
+        }
+
+        #boat2 {
+            font-size: 50px;
+            width: 55px;
+            height: auto;
+            animation: bob 2s ease-in-out infinite;
+        }
+
+        #boat3 {
+            font-size: 35px;
+            width: 30px;
+            height: auto;
+            animation: bob 2s ease-in-out infinite;
+        }
+
+        .boat1 {
+            animation: sail 20s linear infinite;
+            animation-delay: 0s;
+        }
+
+        .boat2 {
+            animation: sail 25s linear infinite;
+            animation-delay: 0s;
+        }
+
+        .boat3 {
+            animation: sail 30s linear infinite;
+            animation-delay: 0s;
+        }
+
+        /* Boat moves horizontally */
+        @keyframes sail {
+            0% {
+                left: -10%;
+            }
+
+            100% {
+                left: 110%;
+            }
+        }
+
+        /* Boat bobs up and down */
+        @keyframes bob {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        #navbar1 {
+            width: 100%;
+            background-color: #fcc62e;
+            color: #133042;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: left;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .a1 {
+            text-decoration: none;
+            color: #133042;
+            display: inline-flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .a1:hover {
+            background-color: #133042;
+            color: #fcc62e;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        #home-icon {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        #home-icon i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        #home-icon i {
+            vertical-align: middle;
+        }
+
+        #navbar1 i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+
+        .intro-container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        #typewriter-text {
+            display: inline-block;
+            overflow: hidden;
+            border-right: 3px solid #133042;
+            white-space: nowrap;
+            width: 0;
+            animation: typing 3s steps(10) 1s forwards, blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .container1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .text,
+        .logo-container {
+            text-align: center;
+        }
+
+        #ani-text {
+            font-size: 45px;
+        }
+
+        #intro-text {
+            font-size: 45px;
+            color: #133042;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #intro-description {
+            font-size: 19.8px;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .btn-explore {
+            padding: 15px 30px;
+            background-color: #fcc62e;
+            color: #133042;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-explore:hover {
+            background-color: #133042;
+            color: #fcc62e;
+        }
+
+        .logo-container img {
+            width: 120px;
+            margin-bottom: 30px;
+        }
+
+        .login-button {
+            position: absolute;
+            top: 10px;
+            right: 60px;
+            z-index: 10;
+        }
+
+        .login-button a {
+            background-color: #fcc62e;
+            color: #133042;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+            transition: all 0.3s ease;
+        }
+
+        .login-button a:hover {
+            background-color: #133042;
+            color: #fcc62e;
+        }
+
+        #mode-toggle {
+            position: absolute;
+            top: 100px;
+            right: 20px;
+            background-color: transparent;
+            border: none;
+            font-size: 35px;
+            color: #656463;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        #mode-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* Chatbot styles */
+        .chat-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.97);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            border: 1px solid #ffd700;
+            transform: translateX(110%);
+            transition: transform 0.3s cubic-bezier(.4,2,.2,1);
+        }
+        .chat-container.visible {
+            transform: translateX(0);
+        }
+        .chat-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            color: #333;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+            z-index: 101;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #333;
+            cursor: pointer;
+        }
+        .chat-header {
+            padding: 18px 0 12px 0;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            color: #333;
+            text-align: center;
+            border-radius: 15px 15px 0 0;
+            position: relative;
+            font-weight: bold;
+            font-size: 22px;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 18px;
+            overflow-y: auto;
+            background: #fffbe6;
+        }
+        .chat-input {
+            padding: 12px;
+            display: flex;
+            gap: 10px;
+            background: #fffbe6;
+            border-radius: 0 0 15px 15px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+        }
+        .chat-input button {
+            background: #ffd700;
+            color: #333;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 22px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .chat-input button:hover {
+            background: #ffed4a;
+        }
+        .bot-message {
+            background: #ffe066;
+            border-radius: 12px;
+            padding: 8px 14px;
+            margin-bottom: 8px;
+            color: #333;
+            align-self: flex-start;
+            max-width: 80%;
+        }
+        .user-message {
+            background: #fff;
+            border-radius: 12px;
+            padding: 8px 14px;
+            margin-bottom: 8px;
+            color: #333;
+            align-self: flex-end;
+            max-width: 80%;
+        }
+        @media (max-width: 600px) {
+            .chat-container {
+                width: 95vw;
+                height: 60vh;
+                right: 2vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Boat 1 -->
+    <div class="boat-container  boat1">
+        <i class="fa-solid fa-sailboat" id="boat1"></i>
+    </div>
+
+    <!-- Boat 2 -->
+    <div class="boat-container boat2">
+        <i class="fa-solid fa-sailboat" id="boat2"></i>
+    </div>
+
+    <!-- Boat 3 -->
+    <div class="boat-container boat3">
+        <i class="fa-solid fa-sailboat" id="boat3"></i>
+    </div>
+
+    <!-- Wave animation -->
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Navbar -->
+    <div id="navbar1">
+        <div id="home-icon"><a href="first.html" class="a1" id="home">
+                <div><i class="fa-solid fa-house"></i>Home</div>
+            </a>
+        </div>
+
+        <div><a href="about-us.html" class="a1" id="about-us">Team</a></div>
+        <div><a href="explore.html" class="a1" id="explore">Explore</a></div>
+        <div class="login-button"><a href="loginpg.html" class="a1" id="login">Login/Signup</a></div>
+    </div>
+
+    <!-- Dark Mode Button -->
+    <button id="mode-toggle"><i class="fa-solid fa-moon"></i></button>
+
+    <!-- Chat toggle button -->
+    <button class="chat-toggle" onclick="toggleChat()">
+        <i class="fas fa-comment"></i>
+    </button>
+
+    <!-- Chat container -->
+    <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+            Quote Bot
+            <button class="close-button" onclick="toggleChat()">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="intro-container">
+        <div class="container1">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="logo.png" alt="Logo" id="logo">
+            </div>
+            <div class="text">
+                <h3 id="ani-text"> <span id="typewriter-text"></span> </h3>
+            </div>
+        </div>
+        <p id="intro-text">Welcome to Quotopia!!</p>
+        <p id="intro-description">
+            Quotopia is a place to find inspiration, wisdom, and motivation. Explore a wide range of categories
+            including educational quotes, relationship advice, wisdom, and more.
+            <br> Get ready to be inspired!
+        </p>
+        <!-- Second page Button -->
+        <a href="second.html">
+            <button class="btn-explore">Get Started</button>
+        </a>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('mode-toggle');
+        const body = document.body;
+        const logo = document.getElementById('logo')
+
+        // Check if dark mode is already set in localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            body.classList.remove('light-mode');
+            toggleBtn.querySelector('i').classList.remove('fa-moon');
+            toggleBtn.querySelector('i').classList.add('fa-sun');
+            logo.src = 'logo-dark.png';
+        }
+
+        // Toggle Dark Mode and Light Mode
+        toggleBtn.addEventListener('click', () => {
+            const icon = toggleBtn.querySelector('i');
+
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                logo.src = 'logo-dark.png';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                logo.src = 'logo.png';
+                localStorage.setItem('theme', 'light');
+            }
+
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            const typewriterText = document.getElementById("typewriter-text");
+            const textToType = "uotopia";  // Text to display
+
+            let index = 0;
+
+            // Function to simulate typing effect
+            function typeText() {
+                if (index < textToType.length) {
+                    typewriterText.textContent += textToType[index];            // adds one character from textToType to typewriterText.textContent
+                    index++;
+                    setTimeout(typeText, 200); // THE typing speed IS in milliseconds)
+                }
+            }
+
+            typeText(); // Start typing the text
+        });
+
+        function toggleChat() {
+            const chatContainer = document.getElementById('chatContainer');
+            const chatToggle = document.querySelector('.chat-toggle');
+            if (chatContainer.classList.contains('visible')) {
+                chatContainer.classList.remove('visible');
+                chatToggle.style.display = 'flex';
+            } else {
+                chatContainer.classList.add('visible');
+                chatToggle.style.display = 'none';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('chatContainer').classList.remove('visible');
+            document.querySelector('.chat-toggle').style.display = 'flex';
+
+            // --- Simple Chatbot Logic ---
+            const chatMessages = document.getElementById('chatMessages');
+            const userInput = document.getElementById('userInput');
+            const sendButton = document.getElementById('sendButton');
+            const responses = {
+                'hello': 'Hi there! How can I help you today?',
+                'quote': 'Here\'s a random quote for you:',
+                'default': 'I\'m here to help! You can ask for quotes or just chat.'
+            };
+            const quotes = [
+                'Believe you can and you\'re halfway there. - Theodore Roosevelt',
+                'Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill',
+                'The only true wisdom is in knowing you know nothing. - Socrates'
+            ];
+            function getBotResponse(input) {
+                input = input.toLowerCase();
+                if (input.includes('quote')) {
+                    return quotes[Math.floor(Math.random() * quotes.length)];
+                }
+                return responses[input] || responses['default'];
+            }
+            function addMessage(message, isBot = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = isBot ? 'bot-message' : 'user-message';
+                messageDiv.textContent = message;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            function handleSend() {
+                const message = userInput.value.trim();
+                if (!message) return;
+                addMessage(message, false);
+                userInput.value = '';
+                setTimeout(() => {
+                    addMessage(getBotResponse(message), true);
+                }, 600);
+            }
+            sendButton.addEventListener('click', handleSend);
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') handleSend();
+            });
+            addMessage('Welcome! I can help you with quotes and general conversation.', true);
+        });
+    </script>
+</body>
+
+</html>
